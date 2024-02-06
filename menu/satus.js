@@ -1780,7 +1780,7 @@ satus.components.colorPicker = function(component, skeleton) {
 	})(component.createChildElement('span', 'value'));
 
 	// Hex input element
-	component.hexInput = component.createChildElement('input, hex-input');
+	component.hexInput = component.createChildElement('input', 'hex-input');
 	component.hexInput.type =  'text';
 	component.hexInput.placeholder = 'Enter hexcode';
 	component.hexInput.value = satus.color.rgbToHex(component.color.value).substring(1);
