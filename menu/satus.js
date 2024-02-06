@@ -1780,24 +1780,24 @@ satus.components.colorPicker = function(component, skeleton) {
 	})(component.createChildElement('span', 'value'));
 
 	// Hex input element
-	// component.hexInput = component.createChildElement('input', 'hex-input');
-	// component.hexInput.type =  'text';
-	// component.hexInput.placeholder = 'Enter hexcode';
-	// component.hexInput.value = satus.color.rgbToHex(component.color.value).substring(1);
+	component.hexInput = component.createChildElement('input', 'hex-input');
+	component.hexInput.type =  'text';
+	component.hexInput.placeholder = 'Enter hexcode';
+	component.hexInput.value = satus.color.rgbToHsl(component.color.value).substring(1);
 
-	// // Event listener for hexcode input
-	// component.hexInput.addEventListener('input', function() {
-	// 	var hex = this.value.trim();
-	// 	var isValid = /^[0-9A-Fa-f]{3,6}$/.test(hex);
+	// Event listener for hexcode input
+	component.hexInput.addEventListener('input', function() {
+		var hex = this.value.trim();
+		var isValid = /^[0-9A-Fa-f]{3,6}$/.test(hex);
 
-	// 	if (isValid) {
-	// 		var rgb = satus.color.hexToRgb('#' + hex);
-	// 		component.color.value = rgb;
-	// 	}
-	// });
+		if (isValid) {
+			var rgb = satus.color.hslToRgb('#' + hex);
+			component.color.value = rgb;
+		}
+	});
 
-	// // Hex input is added to the model
-	// component.childrenContainer.appendChild(component.hexInput);
+	// Hex input is added to the model
+	component.childrenContainer.appendChild(component.hexInput);
 
 	component.addEventListener('click', function() {
 		var hsl = satus.color.rgbToHsl(this.color.value),
