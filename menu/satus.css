@@ -1142,6 +1142,21 @@ As our Syntax markup isnt read for <textarea>, is it?
     background: #fff;
     box-shadow: 0 0 4px rgb(0, 0, 0, .64);
 }
+
+.satus-color-picker__hex-input{
+	width: 100px;
+	height: 25px;
+	padding: 0 5px;
+	font-size: inherit;
+	border: 1px solid rgba(0, 0, 0, .16);
+	border-radius: 4px;
+	margin-left: 8px;
+}
+
+.satus-color-picker__hex-input:focus {
+	outline: none;
+	border-color:var(--satus-theme-primary);
+}
 /*--------------------------------------------------------------
 >>> SPAN
 --------------------------------------------------------------*/

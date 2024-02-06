@@ -1788,7 +1788,7 @@ satus.components.colorPicker = function(component, skeleton) {
 	// Event listener for hexcode input
 	component.hexInput.addEventListener('input', function() {
 		var hex = this.value.trim();
-		// var isValid = /^[0-9A-Fa-f]{3}){1,2}$/.test(hex);
+		var isValid = /^[0-9A-Fa-f]{3}){1,2}$/.test(hex);
 
 		if (isValid) {
 			var rgb = satus.color.hexToRgb('#' + hex);
