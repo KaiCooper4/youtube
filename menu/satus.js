@@ -1783,7 +1783,7 @@ satus.components.colorPicker = function(component, skeleton) {
 	component.hexInput = component.createChildElement('input', 'hex-input');
 	component.hexInput.type =  'text';
 	component.hexInput.placeholder = 'Enter hexcode';
-	component.hexInput.value = satus.color.rgbToHsl(component.color.value).substring(1);
+	component.hexInput.value = satus.color.rgbToHex(component.color.value).substring(1);
 
 	// Event listener for hexcode input
 	component.hexInput.addEventListener('input', function() {
@@ -1791,7 +1791,7 @@ satus.components.colorPicker = function(component, skeleton) {
 		var isValid = /^[0-9A-Fa-f]{3,6}$/.test(hex);
 
 		if (isValid) {
-			var rgb = satus.color.hslToRgb('#' + hex);
+			var rgb = satus.color.hexToRgb('#' + hex);
 			component.color.value = rgb;
 		}
 	});
@@ -2641,6 +2641,8 @@ satus.manifest = function() {
 ----------------------------------------------------------------
 # String to array
 # RGB to HSL
+# RGB to HEX
+# HEX to RGB
 # HUE to RGB
 # HSL to RGB
 --------------------------------------------------------------*/
@@ -2707,6 +2709,43 @@ satus.color.rgbToHsl = function(array) {
 	} else {
 		return [h, s, l, array[3]];
 	}
+};
+
+/*--------------------------------------------------------------
+# RGB TO HEX
+--------------------------------------------------------------*/
+
+satus.color.rgbToHex = function(array) {
+    // Extract RGB components from the array
+    const [r, g, b] = array;
+
+    // Convert each component to hexadecimal and concatenate them
+    const hexR = r.toString(16).padStart(2, '0');
+    const hexG = g.toString(16).padStart(2, '0');
+    const hexB = b.toString(16).padStart(2, '0');
+
+    // Combine the hexadecimal components into a single string
+    return `#${hexR}${hexG}${hexB}`;
+};
+
+/*--------------------------------------------------------------
+# HEX TO RGB
+--------------------------------------------------------------*/
+satus.color.hexToRgb = function(hex) {
+    // Remove '#' if it exists
+    hex = hex.replace(/^#/, '');
+
+    // If the hex code is shorthand, expand it
+    if (hex.length === 3) {
+        hex = hex.replace(/(.)/g, '$1$1');
+    }
+
+    // Convert each pair of hex digits to decimal and return as an array
+    return [
+        parseInt(hex.substring(0, 2), 16),
+        parseInt(hex.substring(2, 4), 16),
+        parseInt(hex.substring(4, 6), 16)
+    ];
 };
 
 
