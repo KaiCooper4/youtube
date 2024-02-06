@@ -1143,7 +1143,7 @@ As our Syntax markup isnt read for <textarea>, is it?
     box-shadow: 0 0 4px rgb(0, 0, 0, .64);
 }
 
-.satus-color-picker__hex-input{
+/* .satus-color-picker__hex-input{
 	width: 100px;
 	height: 25px;
 	padding: 0 5px;
@@ -1156,7 +1156,7 @@ As our Syntax markup isnt read for <textarea>, is it?
 .satus-color-picker__hex-input:focus {
 	outline: none;
 	border-color:var(--satus-theme-primary);
-}
+} */
 /*--------------------------------------------------------------
 >>> SPAN
 --------------------------------------------------------------*/
