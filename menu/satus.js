@@ -1796,6 +1796,11 @@ satus.components.colorPicker = function(component, skeleton) {
 		}
 	});
 
+	// Prevent opening color palette on hex input click
+	component.hexInput.addEventListener('click', function(event) {
+		event.stopPropagation();
+	});
+
 	// Hex input is added to the model
 	component.childrenContainer.appendChild(component.hexInput);
 
