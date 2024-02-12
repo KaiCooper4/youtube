@@ -52,6 +52,7 @@
 "appearance":{"message":"Appearance"},
 "areYouSureYouWantToExportTheData":{"message":"Are you sure you want to export the data?"},
 "areYouSureYouWantToImportTheData":{"message":"Are you sure you want to import this data?"},
+"areYouSureYouWantToSyncTheData":{"message":"Are you sure you want to sync the current settings?"},
 "audio":{"message":"Audio"},
 "audioFormats":{"message":"Audio formats"},
 "auto":{"message":"Auto"},
@@ -210,6 +211,8 @@
 "icons":{"message":"Icons"},
 "iconsOnly":{"message":"Icon only"},
 "importSettings":{"message":"Import settings"},
+"pushSyncSettings":{"message":"push settings to sync"},
+"pullSyncSettings":{"message":"pull synced settings"},
 "improveLogo":{"message":"Improve logo"},
 "improvedtubeButtons":{"message":"ImprovedTube buttons"},
 "improvedtubeIconOnYoutube":{"message":"ImprovedTube icon on YouTube"},
@@ -432,6 +435,7 @@
 "Feature_not_yet_available":{"message":"Feature not yet available"},
 "Grey":{"message":"Grey"},
 "Remove":{"message":"Remove"},
-"Extra_Buttons_below_The_Player":{"message":"Extra buttons below the player"}
+"Extra_Buttons_below_The_Player":{"message":"Extra buttons below the player"},
+"columns": {"message":"Extra sidebar column (without moving the related videos, if the window is wide enough)"}
 }
 
